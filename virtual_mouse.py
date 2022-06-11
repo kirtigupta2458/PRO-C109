@@ -4,7 +4,7 @@ import mediapipe as mp
 from pynput.mouse import Button, Controller
 import pyautogui
 
-mouse=Controller()
+#create mouse object
 
 cap = cv2.VideoCapture(0)
 
@@ -82,15 +82,7 @@ def countFingers(image, hand_landmarks, handNo=0):
 		mouse.position = (relative_mouse_x, relative_mouse_y)
 
 		# Check PINCH Formation Conditions
-		if distance > 40:
-			if pinch == True:
-				pinch = False			
-				mouse.release(Button.left)
-
-		if distance <= 40 :
-			if(pinch==False):
-				pinch=True
-				mouse.press(Button.left)
+		
 
 
 # Define a function to 
